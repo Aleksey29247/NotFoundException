@@ -14,14 +14,13 @@ public class TryCatchTest {
     ProductRepository repository = new ProductRepository();
 
     @Test
-    void removingNonExistentElement() {
+    public void removingNonExistentElement() {
         repository.add(book2);
         Assertions.assertThrows(NotFoundException.class, () -> repository.removeByld(5));
     }
 
     @Test
-    void deletingExistingElement() {
-
+    public void deletingExistingElement() {
         repository.add(book2);
         repository.add(book1);
         repository.removeByld(3);
