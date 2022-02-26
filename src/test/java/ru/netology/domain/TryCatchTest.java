@@ -1,5 +1,7 @@
 package ru.netology.domain;
 
+import domain.Book;
+import domain.Product;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.repository.ProductRepository;
