@@ -1,10 +1,10 @@
 package ru.netology.domain;
 
-import domain.Book;
-import domain.Product;
+import ru.netology.domain.Book;
+import ru.netology.domain.Product;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.netology.domain.repository.ProductRepository;
+import ru.netology.repository.ProductRepository;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;

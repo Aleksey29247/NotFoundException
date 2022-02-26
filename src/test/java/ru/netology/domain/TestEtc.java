@@ -1,13 +1,9 @@
-package ru.netology;
+package ru.netology.domain;
 /*
 *Тут Хронятся тесты для покрытия 100% методов
 * Не относится к заданию
 *
  */
-
-
-
-
 import org.junit.jupiter.api.Test;
 import ru.netology.repository.ProductRepository;
 import ru.netology.domain.Product;
