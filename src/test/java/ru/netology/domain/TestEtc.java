@@ -1,9 +1,10 @@
 package ru.netology.domain;
 /*
-*Тут Хронятся тесты для покрытия 100% методов
-* Не относится к заданию
-*
+ *Тут Хронятся тесты для покрытия 100% методов
+ * Не относится к заданию
+ *
  */
+
 import org.junit.jupiter.api.Test;
 import ru.netology.repository.ProductRepository;
 import ru.netology.domain.Product;
@@ -19,7 +20,6 @@ public class TestEtc {
     Book book1 = new Book(2, "2", 200, "string");
     Book book2 = new Book(3, "3", 200, "string");
     Product produkt1 = new Product(5, "6", 200);
-
 
 
     @Test
@@ -54,14 +54,16 @@ public class TestEtc {
         repository.add(book2);
         repository.add(produkt1);
         ProductManager productManager = new ProductManager(repository);
-        assertNull(productManager.searchBy("7"));
+        Product[] product1 = new Product[0];
+        assertArrayEquals(product1, productManager.searchBy("7"));
     }
 
     @Test
     void testSearchByNameElementZero() {
         ProductRepository repository = new ProductRepository();
         ProductManager productManager = new ProductManager(repository);
-        assertNull(productManager.searchBy("0"));
+        Product[] product1 = new Product[0];
+        assertArrayEquals(product1, productManager.searchBy("0"));
     }
 
 
@@ -108,7 +110,9 @@ public class TestEtc {
         Product[] products = new Product[]{book, book1};
         assertArrayEquals(products, productManager.searchBy("2"));
     }
+
     Smartphone smartphone = new Smartphone(4, "5", 210, "str");
+
     @Test
     public void testAddRepository() {
 
@@ -158,6 +162,7 @@ public class TestEtc {
     }
 
     Book book4 = new Book();
+
     @Test
 
     public void testConstNoParametrBook() {
@@ -175,7 +180,9 @@ public class TestEtc {
         Product[] expected = new Product[]{book, book2, smartphone};
         assertArrayEquals(expected, actual);
     }
+
     Smartphone smartphone1 = new Smartphone();
+
     @Test
     public void testFindNameElementAndConstrNoParamSmartphone() {
         ProductRepository repository = new ProductRepository();
@@ -219,11 +226,6 @@ public class TestEtc {
         repository.add(book2);
         assertNull(repository.findByld(0));
     }
-
-
-
-
-
 
 
 }

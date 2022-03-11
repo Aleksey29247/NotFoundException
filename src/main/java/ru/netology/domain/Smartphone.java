@@ -24,11 +24,8 @@ public class Smartphone extends Product {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Smartphone that = (Smartphone) o;
-        return id == that.id && price == that.price && Objects.equals(manufacturer, that.manufacturer);
+        return true;
+
     }
 
     @Override

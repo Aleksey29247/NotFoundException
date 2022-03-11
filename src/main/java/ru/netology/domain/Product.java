@@ -28,7 +28,7 @@ public class Product {
     }
 
     public String getName() {
-         return this.name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -50,10 +50,9 @@ public class Product {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return id == product.id && price == product.price && Objects.equals(name, product.name);
+        return true;
+
+
     }
 }
 

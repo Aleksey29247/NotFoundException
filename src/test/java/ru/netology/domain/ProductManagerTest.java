@@ -1,8 +1,9 @@
-package ru.netology;
+package ru.netology.domain;
 /*
  * Это тест который просили в задании
  */
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.repository.ProductRepository;
 import ru.netology.domain.Product;
@@ -30,7 +31,8 @@ public class ProductManagerTest {
         productManager.add(book1);
         productManager.add(smartphone);
         productManager.add(produkt1);
-        assertNull(productManager.searchBy("0"));
+        Product[] produckt1=new Product[0];
+        Assertions.assertArrayEquals(produckt1,productManager.searchBy("0"));
     }
 
     @Test
@@ -43,7 +45,7 @@ public class ProductManagerTest {
         repository.removeByld(2);
         Product[] actual = repository.findAll();
         Product[] expected = new Product[]{book, book2, smartphone};
-        assertArrayEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -51,7 +53,7 @@ public class ProductManagerTest {
         ProductManager productManager = new ProductManager(repository);
         productManager.add(book1);
         productManager.add(book2);
-        assertNull(repository.findByld(0));
+        Assertions.assertNull(repository.findByld(0));
     }
 
     @Test
@@ -61,7 +63,7 @@ public class ProductManagerTest {
         productManager.add(book2);
         productManager.add(book1);
         productManager.add(smartphone);
-        assertEquals(book2, repository.findByld(3));
+        Assertions.assertEquals(book2, repository.findByld(3));
     }
 
     @Test
@@ -74,7 +76,7 @@ public class ProductManagerTest {
         productManager.add(book2);
         productManager.add(smartphone);
         Product[] products = new Product[]{book, book1};
-        assertArrayEquals(products, productManager.searchBy("2"));
+        Assertions.assertArrayEquals(products, productManager.searchBy("2"));
     }
 
 }
